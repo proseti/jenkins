@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                sh 'mkdir /lama1'
             }
         }
         stage('Test') {
@@ -13,18 +12,15 @@ pipeline {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh 'make check || true'
-                junit '**/target/*.xml'
+                sh 'touch /lama1/dupa2'
             }
         }
         stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS'
-              }
+            if (env.BRANCH_NAME == 'master') {
+                echo 'wygrales' 
+	    } else {
+                echo 'przegrales'
             }
-            steps {
-                sh 'make publish'
             }
         }
     }
