@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mkdir /lama1'
+                sh 'mkdir /home/jenkins/lama1'
             }
         }
         stage('Test') {
@@ -12,7 +12,7 @@ pipeline {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh 'touch /lama1/dupa2'
+                sh 'touch /home/jenkins/lama1/dupa2'
             }
         }
         stage('Deploy') {
