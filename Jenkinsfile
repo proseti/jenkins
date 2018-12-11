@@ -17,12 +17,9 @@ pipeline {
         }
         stage('Deploy') {
            steps {
-               if (env.BRANCH_NAME == 'master') {
                    echo 'wygrales' 
-	       }   else {
-                      echo 'przegrales'
             }
             }
         }
     }
-}
+
