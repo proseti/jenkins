@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'rm -rf /home/jenkins/lama1'
-                sh 'mkdir /home/jenkins/lama1'
+                sh 'mkdir -p /home/jenkins/lama1'
             }
         }
         stage('Build02') {
