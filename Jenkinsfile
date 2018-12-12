@@ -15,6 +15,7 @@ pipeline {
                 */
                 sh 'rm -rf /home/jenkins/lama1/dupa2'
                 sh 'touch /home/jenkins/lama1/dupa2'
+                sh 'whoami'
             }
         }
         stage('mkdir permissions') {
