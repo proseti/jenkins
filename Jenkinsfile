@@ -15,11 +15,26 @@ pipeline {
                 sh 'touch /home/jenkins/lama1/dupa2'
             }
         }
-        stage('Deploy') {
-           steps {
-                   echo 'wygrales' 
+        stage('Apache2 install') {
+            steps {
+                sh 'apt-get install -y apache2'
             }
+        }
+        stage('Start') {
+           steps {     
+                   sh '/etc/init.d/apache2 start'
+           }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    if ( ss -tlpn | grep 80 ) {
+                        echo 'wygrales' 
+                    } else {
+                        echo 'przegrales usluga jeszcze nie zostala zainstalowana'
+                    }
+                }    
             }
         }
     }
-
+}
