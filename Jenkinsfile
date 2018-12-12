@@ -17,6 +17,11 @@ pipeline {
                 sh 'touch /home/jenkins/lama1/dupa2'
             }
         }
+        stage('mkdir permissions') {
+            steps {
+                sh 'mkdir /test'
+            }
+        }
 //        stage('Apache2 install') {
 //            steps {
 //                script {
