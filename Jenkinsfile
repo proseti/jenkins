@@ -1,5 +1,7 @@
 pipeline {
-    label 'worker01'
+    agent {    
+        label 'worker01'
+    }
 //    agent any
 
     stages {
