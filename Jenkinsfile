@@ -1,8 +1,8 @@
 pipeline {
-    agent {    
-        label 'worker01'
-    }
-//    agent any
+//    agent {    
+//       label 'worker01'
+//    }
+    agent any
 
     stages {
         stage('Build') {
