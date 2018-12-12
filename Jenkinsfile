@@ -40,9 +40,10 @@ pipeline {
 //                script {
                     sh  ''' #!/bin/bash
                         if [ ss -tlpn | grep 335 ]; then
-                        echo 'wygrales' 
-                     else 
-                        echo 'przegrales usluga jeszcze nie zostala zainstalowana'
+                            echo 'wygrales' 
+                        else 
+                            echo 'przegrales usluga jeszcze nie zostala zainstalowana'
+                        fi
                     '''
 //                }   
             }
