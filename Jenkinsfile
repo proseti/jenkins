@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'rm -rf /home/jenkins/lama1'
                 sh 'mkdir /home/jenkins/lama1'
             }
         }
@@ -12,11 +13,14 @@ pipeline {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
+                sh 'rm -rf /home/jenkins/lama1/dupa2'
                 sh 'touch /home/jenkins/lama1/dupa2'
             }
         }
         stage('Apache2 install') {
             steps {
+                sh 'apt-get remove -y apache2'
+                sh 'apt-get purge -y apache2'
                 sh 'apt-get install -y apache2'
             }
         }
