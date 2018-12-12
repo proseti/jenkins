@@ -38,7 +38,7 @@ pipeline {
         stage('Test') {
             steps {
 //                script {
-                    bash  ''' #!/bin/bash
+                    sh  ''' #!/bin/bash
                         if [ ss -tlpn | grep 335 ]; then
                         echo 'wygrales' 
                      else 
