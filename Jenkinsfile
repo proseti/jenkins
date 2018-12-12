@@ -37,13 +37,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                script {
-                    bash  '''if [ ss -tlpn | grep 335 ]; then
+//                script {
+                    bash  ''' #!/bin/bash
+                        if [ ss -tlpn | grep 335 ]; then
                         echo 'wygrales' 
                      else 
                         echo 'przegrales usluga jeszcze nie zostala zainstalowana'
                     '''
-                }   
+//                }   
             }
         }
     }
