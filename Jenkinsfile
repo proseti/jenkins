@@ -7,7 +7,7 @@ pipeline {
                 sh 'mkdir /home/jenkins/lama1'
             }
         }
-        stage('Test') {
+        stage('Build02') {
             steps {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
