@@ -38,12 +38,12 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    if ( (sh ('ss -tlpn | grep 335') ) == false ) {
+                    bash  '''if [ ss -tlpn | grep 335 ]; then
                         echo 'wygrales' 
-                    } else {
+                     else 
                         echo 'przegrales usluga jeszcze nie zostala zainstalowana'
-                    }
-                }    
+                    '''
+                }   
             }
         }
     }
