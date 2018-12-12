@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    if ( ss -tlpn | grep 80 ) {
+                    if (sh 'ss -tlpn | grep 80') {
                         echo 'wygrales' 
                     } else {
                         echo 'przegrales usluga jeszcze nie zostala zainstalowana'
