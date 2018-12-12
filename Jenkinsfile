@@ -31,14 +31,14 @@ pipeline {
 //        }
         stage('Sleep') {
            steps {  
-               sleep 10   
+               sleep 1   
 //                   sh '/etc/init.d/apache2 start'
            }
         }
         stage('Test') {
             steps {
                 script {
-                    if ( (sh ('ss -tlpn | grep 335') ) == true ) {
+                    if ( (sh ('ss -tlpn | grep 335') ) == false ) {
                         echo 'wygrales' 
                     } else {
                         echo 'przegrales usluga jeszcze nie zostala zainstalowana'
