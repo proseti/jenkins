@@ -17,21 +17,22 @@ pipeline {
                 sh 'touch /home/jenkins/lama1/dupa2'
             }
         }
-        stage('Apache2 install') {
-            steps {
+//        stage('Apache2 install') {
+//            steps {
 //                script {
 //                    if (sh ('find /etc/init.d/* apache2') ) {
 //                        sh 'apt-get remove -y apache2'
 //                        sh 'apt-get purge -y apache2'
 //                    } else {
-                        sh 'apt-get install -y apache2'
+//                        sh 'apt-get install -y apache2'
 //                    }
 //                }
-            }
-        }
-        stage('Start') {
-           steps {     
-                   sh '/etc/init.d/apache2 start'
+//            }
+//        }
+        stage('Sleep') {
+           steps {  
+               sleep 10   
+//                   sh '/etc/init.d/apache2 start'
            }
         }
         stage('Test') {
