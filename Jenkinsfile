@@ -1,6 +1,6 @@
 pipeline {
     agent {    
-        label 'master01'
+        label 'eeacms'
     }
 //    agent any
 
